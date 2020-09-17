@@ -16,6 +16,7 @@ jobs:
       run: xcodebuild -version
       # Run build
     - name: Build
+      working-directory: sample
       run: xcodebuild
             -scheme sample
             -sdk iphonesimulator
@@ -23,6 +24,7 @@ jobs:
             build
       # Run unit test
     - name: Run tests
+      working-directory: sample
       run: xcodebuild
             -scheme sample
             -sdk iphonesimulator
