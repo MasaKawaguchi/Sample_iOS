@@ -33,7 +33,9 @@ class sampleTests: XCTestCase {
     func testMySample() {
         let mySample = MySample()
         let add = mySample.add(a: 2, b: 3)
-        // addメソッドの返り値が5であるかの判断
-        XCTAssertEqual(add, 5)
+        // addメソッドの戻り値が5であるかの判断(Unitテスト成功例)
+//        XCTAssertEqual(add, 5)
+        // addメソッドの戻り値は5だが、あえて5以外の値でチェックし、unitテストエラーにさせる(Unitテスト失敗例)
+        XCTAssertEqual(add, 1)
     }
 }
