@@ -1,6 +1,11 @@
 name: Swift
 
-on: [push]
+on:
+  # プッシュでワークフローを起動する
+  # ただしmasterブランチに対してのみ
+  push:
+    branches:
+      - master
 
 jobs:
   build:
