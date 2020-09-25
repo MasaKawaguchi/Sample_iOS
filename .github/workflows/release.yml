@@ -15,24 +15,3 @@ jobs:
     - name: Event Information
       run: |
         echo "Event '${{ github.event.action }}' received from '${{ github.event.client_payload.repository }} Tag ${{ github.event.release.tag_name }}'"
-    # Select Xcode version
-    - name: Select Xcode version
-      run: sudo xcode-select -s '/Applications/Xcode_11.7.app/Contents/Developer'
-    - name: Show Xcode version
-      run: xcodebuild -version
-      # Run build
-    - name: Build
-      working-directory: sample
-      run: xcodebuild
-            -scheme sample
-            -sdk iphonesimulator
-            -configuration Debug
-            build
-      # Run unit test
-    - name: Run tests
-      working-directory: sample
-      run: xcodebuild
-            -scheme sample
-            -sdk iphonesimulator
-            -destination 'platform=iOS Simulator,name=iPhone 11 Pro Max'
-            clean test
